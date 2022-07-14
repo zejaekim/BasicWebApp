@@ -13,6 +13,12 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.contains("name")) {
            return "Jae";
+        } else if (query.contains("plus")) {
+            String[] parts = query.split("plus");
+            parts[0] = parts[0].replaceAll("\\D+", "");
+            parts[1] = parts[1].replaceAll("\\D+", "");
+            int res = Integer.parseInt(parts[0]) + Integer.parseInt(parts[1]);
+            return Integer.toString(res);
         } else { // TODO extend the programm here
             return "";
         }
